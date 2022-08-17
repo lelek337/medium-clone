@@ -1,6 +1,6 @@
 import { state } from "@angular/animations";
 import { Action, createReducer, on } from "@ngrx/store";
-import { AuthStateInterface } from "src/app/shared/types/authState,iterface";
+import { AuthStateInterface } from "src/app/auth/types/authState.iterface";
 import { registerAction } from "./actions";
 
 const initialState: AuthStateInterface = {
