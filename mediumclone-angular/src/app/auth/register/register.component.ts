@@ -5,7 +5,7 @@ import { Observable } from "rxjs";
 
 import { AppStateInterface } from "src/app/shared/types/appState.interface";
 import { AuthStateInterface } from "src/app/auth/types/authState.iterface";
-import { registerAction } from "../store/actions";
+import { registerAction } from "../store/actions/registerActions";
 import { isSubmittingSelector } from "../store/selectors";
 
 
@@ -44,6 +44,4 @@ export class RegisterComponent implements OnInit{
   onSubmit(): void {
     this.store.dispatch(registerAction(this.form.value));
   }
-
-
 }

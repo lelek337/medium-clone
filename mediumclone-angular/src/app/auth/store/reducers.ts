@@ -1,7 +1,7 @@
 import { state } from "@angular/animations";
 import { Action, createReducer, on } from "@ngrx/store";
 import { AuthStateInterface } from "src/app/auth/types/authState.iterface";
-import { registerAction } from "./actions";
+import { registerAction } from "./actions/registerActions";
 
 const initialState: AuthStateInterface = {
   isSubmitting: false
