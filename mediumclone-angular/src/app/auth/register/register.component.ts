@@ -3,10 +3,9 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { select, Store } from "@ngrx/store";
 import { Observable } from "rxjs";
 
-import { AppStateInterface } from "src/app/shared/types/appState.interface";
-import { AuthStateInterface } from "src/app/auth/types/authState.iterface";
 import { registerAction } from "../store/actions/registerActions";
 import { isSubmittingSelector } from "../store/selectors";
+import { RegisterRequestInterface } from "../types/registerRequest.interface";
 
 
 
@@ -35,13 +34,17 @@ export class RegisterComponent implements OnInit{
 
   initializeForm():void {
     this.form = this.fb.group({
-      userName: ['', Validators.required],
+      username: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required]
     })
   }
 
   onSubmit(): void {
-    this.store.dispatch(registerAction(this.form.value));
+
+    const request: RegisterRequestInterface = {
+      user: this.form.value
+    }
+    this.store.dispatch(registerAction({request}));
   }
 }
