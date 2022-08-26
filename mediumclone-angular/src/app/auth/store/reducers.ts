@@ -33,7 +33,6 @@ const authReducer = createReducer(
       ...state,
       isSubmitting: false,
       validationErrors: action.errors
-
     })
   )
 )
