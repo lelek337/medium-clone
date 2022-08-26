@@ -17,7 +17,6 @@ export class AuthService {
     return this.http
     .post<AuthResponseInterface>(url, data)
     .pipe(map((response: AuthResponseInterface) => response.user),
-    tap(response => console.log('response:', response))
     )
   }
 }
