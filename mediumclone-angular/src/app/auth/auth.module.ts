@@ -5,6 +5,7 @@ import { RouterModule } from "@angular/router";
 import { EffectsModule } from "@ngrx/effects";
 import { StoreModule } from "@ngrx/store";
 import { BackendErrorsMessagesModule } from "../shared/modules/backendErrorMessages/backendErrorMessages.module";
+import { PersistanceService } from "../shared/services/persistance.service";
 
 import { RegisterComponent } from "./register/register.component";
 import { AuthService } from "./services/auth.service";
@@ -30,6 +31,6 @@ const routes = [
     RegisterComponent
   ],
   exports: [],
-  providers: [AuthService]
+  providers: [AuthService, PersistanceService]
 })
 export class AuthModule {}
